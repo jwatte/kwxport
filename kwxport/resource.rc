@@ -1,0 +1,176 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUT DIALOGEX 0, 0, 186, 90
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,69,50,14
+    LTEXT           "Kilowatt X file exporter",IDC_STATIC,7,7,172,11
+    LTEXT           "By Jon Watte",IDC_STATIC,7,26,172,15
+END
+
+IDD_SETTINGS DIALOGEX 0, 0, 377, 297
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTERMOUSE | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_CONTROLPARENT | WS_EX_APPWINDOW
+CAPTION "kW X-port"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,319,276,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,262,276,50,14
+    GROUPBOX        "Geometry",IDC_GEOMETRY,7,7,178,171,WS_GROUP | WS_TABSTOP
+    GROUPBOX        "Materials",IDC_MATERIALS,7,180,178,110,WS_GROUP | WS_TABSTOP
+    LTEXT           "http://kwxport.sourceforge.net/",IDC_CREDITS,194,255,175,17
+    GROUPBOX        "Animation",IDC_GEOMETRY2,192,21,178,157,WS_GROUP | WS_TABSTOP
+    LTEXT           "File Frame Rate",IDC_STATIC,191,7,69,11
+    LTEXT           "Static",IDC_FRAMERATE,262,7,107,12
+    GROUPBOX        "Misc",IDC_STATIC,192,180,178,70
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+    END
+
+    IDD_SETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 369
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 290
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON                    "icon1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_KWFUNCTIONS         "kW X-port Functions"
+    IDS_GETSETTINGNAMES     "Get the name of a setting by index"
+    IDS_GETSETTINGVALUES    "Get the value of a setting by index"
+    IDS_SETSETTING          "Set one setting value by name"
+    IDS_SETTING             "Name of the setting to set"
+    IDS_VALUE               "Value of the setting (as string)"
+    IDS_GETANIMATIONNAMES   "Get the name of an animation"
+    IDS_GETANIMATIONSTARTS  "Get the start frame of an animation"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_GETANIMATIONLENGTHS "Get lengths (in frames) of an animation"
+    IDS_GETANIMATIONSCALES  "Get time scaling factor of an animation"
+    IDS_SETANIMATION        "Add or update an animation by name"
+    IDS_NAME                "The name of the animation"
+    IDS_START               "The start frame of the animation"
+    IDS_LENGTH              "The length of the animation (in frames)"
+    IDS_SCALE               "The time scale factor of the animation"
+    IDS_REMOVEANIMATION     "Remove an animation definition by name"
+    IDS_EXPORT              "Export the scene to file using current exporter settings"
+    IDS_FILENAME            "The pathname of the file"
+    IDS_SHOWSETTINGS        "Show the kW X-port Settings dialog"
+    IDS_LOADSETTINGS        "Load a text description of exporter settings into the scene"
+    IDS_SAVESETTINGS        "Save a text description of exporter settings from the scene"
+    IDS_INCLUDEANIMATIONS   "Include animation definition data"
+    IDS_COUNTSETTINGS       "Count the number of settings"
+    IDS_COUNTANIMATIONS     "Get the number of animations"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_INDEX               "The index of the data to get"
+    IDS_GETSETTING          "Get one setting value by name"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

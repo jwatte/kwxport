@@ -1,0 +1,8 @@
+<File Id="DSETUP.dll" Name="DSETUP.dll" Source="..\D3DX\DSETUP.dll" Disk="1"/>
+<File Id="DXSETUP.exe" Name="DXSETUP.exe" Source="..\D3DX\DXSETUP.exe" Disk="1"/>
+<File Id="DirectX End User EULA.rtf" Name="DirectX End User EULA.rtf" Source="..\D3DX\DirectX End User EULA.rtf" Disk="1"/>
+<File Id="Jun2008_d3dx9_38_x64.cab" Name="Jun2008_d3dx9_38_x64.cab" Source="..\D3DX\Jun2008_d3dx9_38_x64.cab" Disk="1"/>
+<File Id="Jun2008_d3dx9_38_x86.cab" Name="Jun2008_d3dx9_38_x86.cab" Source="..\D3DX\Jun2008_d3dx9_38_x86.cab" Disk="1"/>
+<File Id="dsetup32.dll" Name="dsetup32.dll" Source="..\D3DX\dsetup32.dll" Disk="1"/>
+<File Id="dxdllreg_x86.cab" Name="dxdllreg_x86.cab" Source="..\D3DX\dxdllreg_x86.cab" Disk="1"/>
+<File Id="dxupdate.cab" Name="dxupdate.cab" Source="..\D3DX\dxupdate.cab" Disk="1"/>

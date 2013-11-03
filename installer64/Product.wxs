@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="A990BF1A-1386-4a06-BC78-C68C1C8CBA33"
+	    UpgradeCode="43A81118-87FC-4AB8-6464-DFE5BEF5206A"
+	    Name="kW X-port for 3ds Max 64-bit"
+	    Language="1033" Version="1.5.0" Manufacturer="Jon Watte">
+    <Package Keywords='Installer' Platform='x64'
+      Description="kW X-port installer for 3ds Max 64-bit"
+      Comments='See http://www.kwxport.org/' Manufacturer='Jon Watte'
+      InstallerVersion='300' Languages='1033' Compressed='yes' SummaryCodepage='1252'/>
+    <Condition Message="You need to have administrator privileges to install this product.">
+      Privileged
+    </Condition>
+    <Media Id="1" Cabinet="kwxport32.cab" EmbedCab="yes" />
+
+    <Property Id="ARPNOMODIFY" Value="1"/>
+    <Property Id="ARPHELPLINK" Value="http://www.kwxport.org/"/>
+    <Property Id="ALLUSERS" Value="1"/>
+
+    <Property Id="INSTALL_9_64_US">
+      <RegistrySearch Id="Max9_64Registry_US" Type="raw" Root="HKLM"
+          Key="SOFTWARE\Autodesk\3dsMax\9.0\MAX-1:409" Name="Installdir" />
+    </Property>
+    <Property Id="INSTALL_9_64_FR">
+      <RegistrySearch Id="Max9_64Registry_FR" Type="raw" Root="HKLM"
+          Key="SOFTWARE\Autodesk\3dsMax\9.0\MAX-1:40C" Name="Installdir" />
+    </Property>
+    <Property Id="INSTALL_9_64_DE">
+      <RegistrySearch Id="Max9_64Registry_DE" Type="raw" Root="HKLM"
+          Key="SOFTWARE\Autodesk\3dsMax\9.0\MAX-1:407" Name="Installdir" />
+    </Property>
+    <Property Id="INSTALL_9_64_JP">
+      <RegistrySearch Id="Max9_64Registry_JP" Type="raw" Root="HKLM"
+          Key="SOFTWARE\Autodesk\3dsMax\9.0\MAX-1:411" Name="Installdir" />
+    </Property>
+    <Property Id="INSTALL_9_64_CN">
+      <RegistrySearch Id="Max9_64Registry_CN" Type="raw" Root="HKLM"
+          Key="SOFTWARE\Autodesk\3dsMax\9.0\MAX-1:804" Name="Installdir" />
+    </Property>
+
+    <Property Id="INSTALL_2008_64_US">
+      <RegistrySearch Id="Max2008_64Registry_US" Type="raw" Root="HKLM"
+          Key="SOFTWARE\Autodesk\3dsMax\10.0\MAX-1:409" Name="Installdir" />
+    </Property>
+    <Property Id="INSTALL_2008_64_FR">
+      <RegistrySearch Id="Max2008_64Registry_FR" Type="raw" Root="HKLM"
+          Key="SOFTWARE\Autodesk\3dsMax\10.0\MAX-1:40C" Name="Installdir" />
+    </Property>
+    <Property Id="INSTALL_2008_64_DE">
+      <RegistrySearch Id="Max2008_64Registry_DE" Type="raw" Root="HKLM"
+          Key="SOFTWARE\Autodesk\3dsMax\10.0\MAX-1:407" Name="Installdir" />
+    </Property>
+    <Property Id="INSTALL_2008_64_JP">
+      <RegistrySearch Id="Max2008_64Registry_JP" Type="raw" Root="HKLM"
+          Key="SOFTWARE\Autodesk\3dsMax\10.0\MAX-1:411" Name="Installdir" />
+    </Property>
+    <Property Id="INSTALL_2008_64_CN">
+      <RegistrySearch Id="Max2008_64Registry_CN" Type="raw" Root="HKLM"
+          Key="SOFTWARE\Autodesk\3dsMax\10.0\MAX-1:804" Name="Installdir" />
+    </Property>
+
+    <Property Id="INSTALL_2009_64_US">
+      <RegistrySearch Id="Max2009_64Registry_US" Type="raw" Root="HKLM"
+          Key="SOFTWARE\Autodesk\3dsMax\11.0\MAX-1:409" Name="Installdir" />
+    </Property>
+    <Property Id="INSTALL_2009_64_FR">
+      <RegistrySearch Id="Max2009_64Registry_FR" Type="raw" Root="HKLM"
+          Key="SOFTWARE\Autodesk\3dsMax\11.0\MAX-1:40C" Name="Installdir" />
+    </Property>
+    <Property Id="INSTALL_2009_64_DE">
+      <RegistrySearch Id="Max2009_64Registry_DE" Type="raw" Root="HKLM"
+          Key="SOFTWARE\Autodesk\3dsMax\11.0\MAX-1:407" Name="Installdir" />
+    </Property>
+    <Property Id="INSTALL_2009_64_JP">
+      <RegistrySearch Id="Max2009_64Registry_JP" Type="raw" Root="HKLM"
+          Key="SOFTWARE\Autodesk\3dsMax\11.0\MAX-1:411" Name="Installdir" />
+    </Property>
+    <Property Id="INSTALL_2009_64_CN">
+      <RegistrySearch Id="Max2009_64Registry_CN" Type="raw" Root="HKLM"
+          Key="SOFTWARE\Autodesk\3dsMax\11.0\MAX-1:804" Name="Installdir" />
+    </Property>
+
+    <Property Id="INSTALL_2010_64_US">
+      <RegistrySearch Id="Max2010_64Registry_US" Type="raw" Root="HKLM"
+          Key="SOFTWARE\Autodesk\3dsMax\12.0\MAX-1:409" Name="Installdir" />
+    </Property>
+    <Property Id="INSTALL_2010_64_FR">
+      <RegistrySearch Id="Max2010_64Registry_FR" Type="raw" Root="HKLM"
+          Key="SOFTWARE\Autodesk\3dsMax\12.0\MAX-1:40C" Name="Installdir" />
+    </Property>
+    <Property Id="INSTALL_2010_64_DE">
+      <RegistrySearch Id="Max2010_64Registry_DE" Type="raw" Root="HKLM"
+          Key="SOFTWARE\Autodesk\3dsMax\12.0\MAX-1:407" Name="Installdir" />
+    </Property>
+    <Property Id="INSTALL_2010_64_JP">
+      <RegistrySearch Id="Max2010_64Registry_JP" Type="raw" Root="HKLM"
+          Key="SOFTWARE\Autodesk\3dsMax\12.0\MAX-1:411" Name="Installdir" />
+    </Property>
+    <Property Id="INSTALL_2010_64_CN">
+      <RegistrySearch Id="Max2010_64Registry_CN" Type="raw" Root="HKLM"
+          Key="SOFTWARE\Autodesk\3dsMax\12.0\MAX-1:804" Name="Installdir" />
+    </Property>
+
+    <Property Id="INSTALL_2011_64_US">
+      <RegistrySearch Id="Max2011_64Registry_US" Type="raw" Root="HKLM"
+          Key="SOFTWARE\Autodesk\3dsMax\13.0\MAX-1:409" Name="Installdir" />
+    </Property>
+    <Property Id="INSTALL_2011_64_FR">
+      <RegistrySearch Id="Max2011_64Registry_FR" Type="raw" Root="HKLM"
+          Key="SOFTWARE\Autodesk\3dsMax\13.0\MAX-1:40C" Name="Installdir" />
+    </Property>
+    <Property Id="INSTALL_2011_64_DE">
+      <RegistrySearch Id="Max2011_64Registry_DE" Type="raw" Root="HKLM"
+          Key="SOFTWARE\Autodesk\3dsMax\13.0\MAX-1:407" Name="Installdir" />
+    </Property>
+    <Property Id="INSTALL_2011_64_JP">
+      <RegistrySearch Id="Max2011_64Registry_JP" Type="raw" Root="HKLM"
+          Key="SOFTWARE\Autodesk\3dsMax\13.0\MAX-1:411" Name="Installdir" />
+    </Property>
+    <Property Id="INSTALL_2011_64_CN">
+      <RegistrySearch Id="Max2011_64Registry_CN" Type="raw" Root="HKLM"
+          Key="SOFTWARE\Autodesk\3dsMax\13.0\MAX-1:804" Name="Installdir" />
+    </Property>
+
+    <Upgrade Id="{43A81118-87FC-4AB8-6464-DFE5BEF52068}">
+      <UpgradeVersion IgnoreRemoveFailure="yes" Property="UPGRADE01" Minimum="0"/>
+    </Upgrade>
+    <Upgrade Id="{43A81118-87FC-4AB8-6464-DFE5BEF52069}">
+      <UpgradeVersion IgnoreRemoveFailure="yes" Property="UPGRADE02" Minimum="0"/>
+    </Upgrade>
+
+    <InstallUISequence>
+      <FindRelatedProducts Before="CostInitialize"/>
+    </InstallUISequence>
+
+    <InstallExecuteSequence>
+      <FindRelatedProducts Before="CostInitialize"/>
+      <RemoveExistingProducts After="InstallFinalize"/>
+      <Custom Action="D3DX" Before="InstallFinalize">NOT REMOVE</Custom>
+    </InstallExecuteSequence>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+
+      <Directory Id="ProgramFiles64Folder" Name=".">
+        <Directory Id="KWPLAINROOT" Name="kW X-port 64-bit">
+          <Directory Id="INSTALL_2008_64_PLAIN" Name="3ds Max 2008">
+            <Component Win64="yes" Id="PluginDle_2008_64_PLAIN" Guid="{0E40E8F3-5137-4DC8-6464-99932BFBC884}"
+                KeyPath="yes">
+              <File Id="kwxport_2008_64_PLAIN" Name="kwxport.dle" Source="..\kwxport\x64\Release2008\kwxport.dll"
+                  Vital="yes" DiskId="1" />
+            </Component>
+          </Directory>
+          <Directory Id="INSTALL_2009_64_PLAIN" Name="3ds Max 2009">
+            <Component Win64="yes" Id="PluginDle_2009_64_PLAIN" Guid="{239410A3-F572-452A-6464-25F8D54946CA}"
+                KeyPath="yes">
+              <File Id="kwxport_2009_64_PLAIN" Name="kwxport.dle" Source="..\kwxport\x64\Release2009\kwxport.dll"
+                  Vital="yes" DiskId="1" />
+            </Component>
+          </Directory>
+          <Directory Id="INSTALL_2010_64_PLAIN" Name="3ds Max 2010">
+            <Component Win64="yes" Id="PluginDle_2010_64_PLAIN" Guid="79421784-7F54-4BAC-6464-D15CA5EC70F7"
+                KeyPath="yes">
+              <File Id="kwxport_2010_64_PLAIN" Name="kwxport.dle" Source="..\kwxport\x64\Release2010\kwxport.dll"
+                  Vital="yes" DiskId="1" />
+            </Component>
+          </Directory>
+        </Directory>
+        <Directory Id="INSTALL_2011_64_PLAIN" Name="3ds Max 2010">
+          <Component Win64="yes" Id="PluginDle_2011_64_PLAIN" Guid="79421784-7F54-4BAC-6464-D15CA5EC70F8"
+              KeyPath="yes">
+            <File Id="kwxport_2011_64_PLAIN" Name="kwxport.dle" Source="..\kwxport\x64\Release2011\kwxport.dll"
+                Vital="yes" DiskId="1" />
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+
+      <Directory Id="INSTALL_2008_64_US" Name="3dsMax2008US">
+        <Directory Id="PLUGINS_2008_64_US" Name="plugins">
+          <Component Win64="yes" Id="PluginDle_2008_64_US" Guid="{0E40E8F3-5137-4DC8-6464-99932BFBC885}"
+              KeyPath="yes">
+            <File Id="kwxport_2008_64_US" Name="kwxport.dle" Source="..\kwxport\x64\Release2008\kwxport.dll"
+                Vital="yes" DiskId="1" />
+          </Component>
+        </Directory>
+      </Directory>
+      <Directory Id="INSTALL_2008_64_FR" Name="3dsMax2008FR">
+        <Directory Id="PLUGINS_2008_64_FR" Name="plugins">
+          <Component Win64="yes" Id="PluginDle_2008_64_FR" Guid="{0E40E8F3-5137-4DC8-6464-99932BFBC886}"
+              KeyPath="yes">
+            <File Id="kwxport_2008_64_FR" Name="kwxport.dle" Source="..\kwxport\x64\Release2008\kwxport.dll"
+                Vital="yes" DiskId="1" />
+          </Component>
+        </Directory>
+      </Directory>
+      <Directory Id="INSTALL_2008_64_DE" Name="3dsMax2008DE">
+        <Directory Id="PLUGINS_2008_64_DE" Name="plugins">
+          <Component Win64="yes" Id="PluginDle_2008_64_DE" Guid="{0E40E8F3-5137-4DC8-6464-99932BFBC887}"
+              KeyPath="yes">
+            <File Id="kwxport_2008_64_DE" Name="kwxport.dle" Source="..\kwxport\x64\Release2008\kwxport.dll"
+                Vital="yes" DiskId="1" />
+          </Component>
+        </Directory>
+      </Directory>
+      <Directory Id="INSTALL_2008_64_JP" Name="3dsMax2008JP">
+        <Directory Id="PLUGINS_2008_64_JP" Name="plugins">
+          <Component Win64="yes" Id="PluginDle_2008_64_JP" Guid="{0E40E8F3-5137-4DC8-6464-99932BFBC888}"
+              KeyPath="yes">
+            <File Id="kwxport_2008_64_JP" Name="kwxport.dle" Source="..\kwxport\x64\Release2008\kwxport.dll"
+                Vital="yes" DiskId="1" />
+          </Component>
+        </Directory>
+      </Directory>
+      <Directory Id="INSTALL_2008_64_CN" Name="3dsMax2008CN">
+        <Directory Id="PLUGINS_2008_64_CN" Name="plugins">
+          <Component Win64="yes" Id="PluginDle_2008_64_CN" Guid="{0E40E8F3-5137-4DC8-6464-99932BFBC889}"
+              KeyPath="yes">
+            <File Id="kwxport_2008_64_CN" Name="kwxport.dle" Source="..\kwxport\x64\Release2008\kwxport.dll"
+                Vital="yes" DiskId="1" />
+          </Component>
+        </Directory>
+      </Directory>
+
+      <Directory Id="INSTALL_2009_64_US" Name="3dsMax2009US">
+        <Directory Id="PLUGINS_2009_64_US" Name="plugins">
+          <Component Win64="yes" Id="PluginDle_2009_64_US" Guid="{239410A3-F572-452A-6464-25F8D54946CB}"
+              KeyPath="yes">
+            <File Id="kwxport_2009_64_US" Name="kwxport.dle" Source="..\kwxport\x64\Release2009\kwxport.dll"
+                Vital="yes" DiskId="1" />
+          </Component>
+        </Directory>
+      </Directory>
+      <Directory Id="INSTALL_2009_64_FR" Name="3dsMax2009FR">
+        <Directory Id="PLUGINS_2009_64_FR" Name="plugins">
+          <Component Win64="yes" Id="PluginDle_2009_64_FR" Guid="{239410A3-F572-452A-6464-25F8D54946CC}"
+              KeyPath="yes">
+            <File Id="kwxport_2009_64_FR" Name="kwxport.dle" Source="..\kwxport\x64\Release2009\kwxport.dll"
+                Vital="yes" DiskId="1" />
+          </Component>
+        </Directory>
+      </Directory>
+      <Directory Id="INSTALL_2009_64_DE" Name="3dsMax2009DE">
+        <Directory Id="PLUGINS_2009_64_DE" Name="plugins">
+          <Component Win64="yes" Id="PluginDle_2009_64_DE" Guid="{239410A3-F572-452A-6464-25F8D54946CD}"
+              KeyPath="yes">
+            <File Id="kwxport_2009_64_DE" Name="kwxport.dle" Source="..\kwxport\x64\Release2009\kwxport.dll"
+                Vital="yes" DiskId="1" />
+          </Component>
+        </Directory>
+      </Directory>
+      <Directory Id="INSTALL_2009_64_JP" Name="3dsMax2009JP">
+        <Directory Id="PLUGINS_2009_64_JP" Name="plugins">
+          <Component Win64="yes" Id="PluginDle_2009_64_JP" Guid="{239410A3-F572-452A-6464-25F8D54946CE}"
+              KeyPath="yes">
+            <File Id="kwxport_2009_64_JP" Name="kwxport.dle" Source="..\kwxport\x64\Release2009\kwxport.dll"
+                Vital="yes" DiskId="1" />
+          </Component>
+        </Directory>
+      </Directory>
+      <Directory Id="INSTALL_2009_64_CN" Name="3dsMax2009CN">
+        <Directory Id="PLUGINS_2009_64_CN" Name="plugins">
+          <Component Win64="yes" Id="PluginDle_2009_64_CN" Guid="{239410A3-F572-452A-6464-25F8D54946CF}"
+              KeyPath="yes">
+            <File Id="kwxport_2009_64_CN" Name="kwxport.dle" Source="..\kwxport\x64\Release2009\kwxport.dll"
+                Vital="yes" DiskId="1" />
+          </Component>
+        </Directory>
+      </Directory>
+
+      <Directory Id="INSTALL_2010_64_US" Name="3dsMax2010US">
+        <Directory Id="PLUGINS_2010_64_US" Name="plugins">
+          <Component Win64="yes" Id="PluginDle_2010_64_US" Guid="79421784-7F54-4BAC-6464-D15CA5EC70F8"
+              KeyPath="yes">
+            <File Id="kwxport_2010_64_US" Name="kwxport.dle" Source="..\kwxport\x64\Release2010\kwxport.dll"
+                Vital="yes" DiskId="1" />
+          </Component>
+        </Directory>
+      </Directory>
+      <Directory Id="INSTALL_2010_64_FR" Name="3dsMax2010DE">
+        <Directory Id="PLUGINS_2010_64_FR" Name="plugins">
+          <Component Win64="yes" Id="PluginDle_2010_64_FR" Guid="79421784-7F54-4BAC-6464-D15CA5EC70F9"
+              KeyPath="yes">
+            <File Id="kwxport_2010_64_FR" Name="kwxport.dle" Source="..\kwxport\x64\Release2010\kwxport.dll"
+                Vital="yes" DiskId="1" />
+          </Component>
+        </Directory>
+      </Directory>
+      <Directory Id="INSTALL_2010_64_DE" Name="3dsMax2010FR">
+        <Directory Id="PLUGINS_2010_64_DE" Name="plugins">
+          <Component Win64="yes" Id="PluginDle_2010_64_DE" Guid="79421784-7F54-4BAC-6464-D15CA5EC70FA"
+              KeyPath="yes">
+            <File Id="kwxport_2010_64_DE" Name="kwxport.dle" Source="..\kwxport\x64\Release2010\kwxport.dll"
+                Vital="yes" DiskId="1" />
+          </Component>
+        </Directory>
+      </Directory>
+      <Directory Id="INSTALL_2010_64_JP" Name="3dsMax2010JP">
+        <Directory Id="PLUGINS_2010_64_JP" Name="plugins">
+          <Component Win64="yes" Id="PluginDle_2010_64_JP" Guid="79421784-7F54-4BAC-6464-D15CA5EC70FB"
+              KeyPath="yes">
+            <File Id="kwxport_2010_64_JP" Name="kwxport.dle" Source="..\kwxport\x64\Release2010\kwxport.dll"
+                Vital="yes" DiskId="1" />
+          </Component>
+        </Directory>
+      </Directory>
+      <Directory Id="INSTALL_2010_64_CN" Name="3dsMax2010CN">
+        <Directory Id="PLUGINS_2010_64_CN" Name="plugins">
+          <Component Win64="yes" Id="PluginDle_2010_64_CN" Guid="79421784-7F54-4BAC-6464-D15CA5EC70FC"
+              KeyPath="yes">
+            <File Id="kwxport_2010_64_CN" Name="kwxport.dle" Source="..\kwxport\x64\Release2010\kwxport.dll"
+                Vital="yes" DiskId="1" />
+          </Component>
+        </Directory>
+      </Directory>
+
+    <Directory Id="INSTALL_2011_64_US" Name="3dsMax2011US">
+      <Directory Id="PLUGINS_2011_64_US" Name="plugins">
+        <Component Win64="yes" Id="PluginDle_2011_64_US" Guid="79421784-7F54-4BAC-6465-D15CA5EC70F8"
+            KeyPath="yes">
+          <File Id="kwxport_2011_64_US" Name="kwxport.dle" Source="..\kwxport\x64\Release2011\kwxport.dll"
+              Vital="yes" DiskId="1" />
+        </Component>
+      </Directory>
+    </Directory>
+    <Directory Id="INSTALL_2011_64_FR" Name="3dsMax2011DE">
+      <Directory Id="PLUGINS_2011_64_FR" Name="plugins">
+        <Component Win64="yes" Id="PluginDle_2011_64_FR" Guid="79421784-7F54-4BAC-6465-D15CA5EC70F9"
+            KeyPath="yes">
+          <File Id="kwxport_2011_64_FR" Name="kwxport.dle" Source="..\kwxport\x64\Release2011\kwxport.dll"
+              Vital="yes" DiskId="1" />
+        </Component>
+      </Directory>
+    </Directory>
+    <Directory Id="INSTALL_2011_64_DE" Name="3dsMax2011FR">
+      <Directory Id="PLUGINS_2011_64_DE" Name="plugins">
+        <Component Win64="yes" Id="PluginDle_2011_64_DE" Guid="79421784-7F54-4BAC-6465-D15CA5EC70FA"
+            KeyPath="yes">
+          <File Id="kwxport_2011_64_DE" Name="kwxport.dle" Source="..\kwxport\x64\Release2011\kwxport.dll"
+              Vital="yes" DiskId="1" />
+        </Component>
+      </Directory>
+    </Directory>
+    <Directory Id="INSTALL_2011_64_JP" Name="3dsMax2011JP">
+      <Directory Id="PLUGINS_2011_64_JP" Name="plugins">
+        <Component Win64="yes" Id="PluginDle_2011_64_JP" Guid="79421784-7F54-4BAC-6465-D15CA5EC70FB"
+            KeyPath="yes">
+          <File Id="kwxport_2011_64_JP" Name="kwxport.dle" Source="..\kwxport\x64\Release2011\kwxport.dll"
+              Vital="yes" DiskId="1" />
+        </Component>
+      </Directory>
+    </Directory>
+    <Directory Id="INSTALL_2011_64_CN" Name="3dsMax2011CN">
+      <Directory Id="PLUGINS_2011_64_CN" Name="plugins">
+        <Component Win64="yes" Id="PluginDle_2011_64_CN" Guid="79421784-7F54-4BAC-6465-D15CA5EC70FC"
+            KeyPath="yes">
+          <File Id="kwxport_2011_64_CN" Name="kwxport.dle" Source="..\kwxport\x64\Release2011\kwxport.dll"
+              Vital="yes" DiskId="1" />
+        </Component>
+      </Directory>
+    </Directory>
+
+    <Directory Id="ProgramMenuFolder">
+      <Directory Id="ApplicationProgramsFolder" Name="kW X-port 64-bit Documentation">
+        <Component Win64="yes" Id="RemoveShortcuts" Guid="{1951C610-3662-4C62-6464-E051E96B3EB0}">
+          <RemoveFolder Id='DocsFolder' On='uninstall'/>
+          <RegistryValue Root='HKCU' Key='SOFTWARE\Jon Watte\kW X-port 64-bit\Documentation'
+                         Type='string' Value='1951C610-3662-4C62-6464-E051E96B3EB0'
+                         KeyPath='yes' />
+        </Component>
+        <Component Win64="yes" Id="SeparateFolderShortcut" Guid="{DCC7AE17-698B-4C47-6464-491F1291C39C}">
+          <RegistryValue Root="HKCU" Key="SOFTWARE\Jon Watte\kW X-port 64-bit\Separate Plug-ins"
+              Type="string" Value="DCC7AE17-698B-4C47-6464-491F1291C39C" KeyPath="yes" />
+          <Shortcut Id="SeparatePlugins.Shortcut" Target="[KWPLAINROOT]"
+              Name="Separate Plug-ins 64-bit" Advertise="no" />
+        </Component>
+      </Directory>
+
+      <Directory Id="CommonAppDataFolder">
+        <Directory Id="DocsFolder" Name="kW X-port 64-bit Documentation">
+          <Component Win64="yes" Id="DocsFolderCreate" Guid="355E1086-FD19-40EA-6464-36E189DAE4DE" KeyPath="yes">
+            <CreateFolder Directory="DocsFolder"/>
+          </Component>
+          <Component Win64="yes" Id="Changelist" Guid="{6176BEF1-E139-4AC1-6464-25A14DC3822A}">
+            <File Id="CHANGELIST.html" Name="CHANGELIST.html" Source="..\doc\CHANGELIST.html" DiskId="1" KeyPath="yes">
+              <Shortcut Id="CHANGELIST.html.Shortcut" Directory="ApplicationProgramsFolder"
+                  Name="Change List" WorkingDirectory="DocsFolder" Advertise="yes"/>
+            </File>
+          </Component>
+          <Component Win64="yes" Id="Manual" Guid="{8F48733E-1BB0-4A19-6464-C6938AD86D91}">
+            <File Id="MANUAL.html" Name="MANUAL.html" Source="..\doc\MANUAL.html" DiskId="1" KeyPath="yes">
+              <Shortcut Id="MANUAL.html.Shortcut" Directory="ApplicationProgramsFolder"
+                  Name="Manual" WorkingDirectory="DocsFolder" Advertise="yes"/>
+            </File>
+            <File Id="styles.css" Name="styles.css" Source="..\doc\styles.css" DiskId="1" />
+            <File Id="kwxport_1.4.0.png" Name="kwxport-1.4.0.png" Source="..\doc\kwxport-1.4.0.png" DiskId="1" />
+          </Component>
+          <Component Win64="yes" Id="kwutils" Guid="{C3C17589-055C-4E30-6464-9C3678325AE4}">
+            <File Id="kwutils.ms" Name="kwutils.ms" Source="..\doc\kwutils.ms" DiskId="1" KeyPath="yes">
+              <Shortcut Id="kwutils.ms.Shortcut" Directory="ApplicationProgramsFolder"
+                  Name="Utilities Max Script" WorkingDirectory="DocsFolder" Advertise="yes"/>
+            </File>
+          </Component>
+        </Directory>
+      </Directory>
+
+      <Directory Id="WindowsFolder">
+        <Directory Id="DXREDISTDIR" Name="7D5A27A4-D8F2-4AFB-6464-8278039498C4">
+          <Component Win64="yes" Id="DxRedistMar2009" Guid="{7D5A27A4-D8F2-4AFB-6464-8278039498C4}"
+              KeyPath="yes">
+            <File Id="DSETUP.dll" Name="DSETUP.dll" Source="..\D3DX\DSETUP.dll" DiskId="1"/>
+            <File Id="DXSETUP.exe" Name="DXSETUP.exe" Source="..\D3DX\DXSETUP.exe" DiskId="1"/>
+            <File Id="DirectX_End_User_EULA.rtf" Name="DirectX End User EULA.rtf" Source="..\D3DX\DirectX End User EULA.rtf" DiskId="1"/>
+            <File Id="Mar2009_d3dx9_41_x86.cab" Name="Mar2009_d3dx9_41_x86.cab" Source="..\D3DX\Mar2009_d3dx9_41_x86.cab" DiskId="1"/>
+            <File Id="Mar2009_d3dx9_41_x64.cab" Name="Mar2009_d3dx9_41_x64.cab" Source="..\D3DX\Mar2009_d3dx9_41_x64.cab" DiskId="1"/>
+            <File Id="dsetup32.dll" Name="dsetup32.dll" Source="..\D3DX\dsetup32.dll" DiskId="1"/>
+            <File Id="dxdllreg_x86.cab" Name="dxdllreg_x86.cab" Source="..\D3DX\dxdllreg_x86.cab" DiskId="1"/>
+            <File Id="dxupdate.cab" Name="dxupdate.cab" Source="..\D3DX\dxupdate.cab" DiskId="1"/>
+          </Component>
+        </Directory>
+      </Directory>
+
+      <Merge Id='CRT' Language='0' SourceFile='..\CRT\microsoft_vc90_crt_x86_x64.msm' DiskId='1' />
+      <Merge Id='CRT Policy' Language='0' SourceFile='..\CRT\policy_9_0_microsoft_vc90_crt_x86_x64.msm' DiskId='1' />
+    </Directory>
+
+    <Feature Id="Complete" Title="kW X-port for 64-bit 3ds Max" Description="Versions 2008, 2009 and 2010 if present."
+        Display="expand" Level="1" AllowAdvertise='no'>
+      <Condition Level='0'>
+        <!-- don't install anything if there is no installed version of 3ds max -->
+        NOT INSTALL_2008_64_US AND NOT INSTALL_2009_64_US AND NOT INSTALL_2010_64_US AND NOT INSTALL_2011_64_US
+        AND NOT INSTALL_2008_64_FR AND NOT INSTALL_2009_64_FR AND NOT INSTALL_2010_64_FR AND NOT INSTALL_2011_64_FR
+        AND NOT INSTALL_2008_64_DE AND NOT INSTALL_2009_64_DE AND NOT INSTALL_2010_64_DE AND NOT INSTALL_2011_64_DE
+        AND NOT INSTALL_2008_64_JP AND NOT INSTALL_2009_64_JP AND NOT INSTALL_2010_64_JP AND NOT INSTALL_2011_64_JP
+        AND NOT INSTALL_2008_64_CN AND NOT INSTALL_2009_64_CN AND NOT INSTALL_2010_64_CN AND NOT INSTALL_2011_64_CN
+      </Condition>
+      <MergeRef Id="CRT"/>
+      <MergeRef Id="CRT Policy"/>
+
+      <Feature Id="Max2008_64_US" Title="3ds Max 2008 (US) 64-bit" Level="1" AllowAdvertise='no'>
+        <ComponentRef Id="PluginDle_2008_64_US"/>
+        <Condition Level="0">NOT INSTALL_2008_64_US</Condition>
+      </Feature>
+      <Feature Id="Max2008_64_FR" Title="3ds Max 2008 (FR) 64-bit" Level="1" AllowAdvertise='no'>
+        <ComponentRef Id="PluginDle_2008_64_FR"/>
+        <Condition Level="0">NOT INSTALL_2008_64_FR</Condition>
+      </Feature>
+      <Feature Id="Max2008_64_DE" Title="3ds Max 2008 (DK) 64-bit" Level="1" AllowAdvertise='no'>
+        <ComponentRef Id="PluginDle_2008_64_DE"/>
+        <Condition Level="0">NOT INSTALL_2008_64_DE</Condition>
+      </Feature>
+      <Feature Id="Max2008_64_JP" Title="3ds Max 2008 (JP) 64-bit" Level="1" AllowAdvertise='no'>
+        <ComponentRef Id="PluginDle_2008_64_JP"/>
+        <Condition Level="0">NOT INSTALL_2008_64_JP</Condition>
+      </Feature>
+      <Feature Id="Max2008_64_CN" Title="3ds Max 2008 (CH) 64-bit" Level="1" AllowAdvertise='no'>
+        <ComponentRef Id="PluginDle_2008_64_CN"/>
+        <Condition Level="0">NOT INSTALL_2008_64_CN</Condition>
+      </Feature>
+
+      <Feature Id="Max2009_64_US" Title="3ds Max 2009 (US) 64-bit" Level="1" AllowAdvertise='no'>
+        <ComponentRef Id="PluginDle_2009_64_US"/>
+        <Condition Level="0">NOT INSTALL_2009_64_US</Condition>
+      </Feature>
+      <Feature Id="Max2009_64_FR" Title="3ds Max 2009 (FR) 64-bit" Level="1" AllowAdvertise='no'>
+        <ComponentRef Id="PluginDle_2009_64_FR"/>
+        <Condition Level="0">NOT INSTALL_2009_64_FR</Condition>
+      </Feature>
+      <Feature Id="Max2009_64_DE" Title="3ds Max 2009 (DE) 64-bit" Level="1" AllowAdvertise='no'>
+        <ComponentRef Id="PluginDle_2009_64_DE"/>
+        <Condition Level="0">NOT INSTALL_2009_64_DE</Condition>
+      </Feature>
+      <Feature Id="Max2009_64_JP" Title="3ds Max 2009 (JP) 64-bit" Level="1" AllowAdvertise='no'>
+        <ComponentRef Id="PluginDle_2009_64_JP"/>
+        <Condition Level="0">NOT INSTALL_2009_64_JP</Condition>
+      </Feature>
+      <Feature Id="Max2009_64_CN" Title="3ds Max 2009 (CH) 64-bit" Level="1" AllowAdvertise='no'>
+        <ComponentRef Id="PluginDle_2009_64_CN"/>
+        <Condition Level="0">NOT INSTALL_2009_64_CN</Condition>
+      </Feature>
+
+      <Feature Id="Max2010_64_US" Title="3ds Max 2010 (US) 64-bit" Level="1" AllowAdvertise='no'>
+        <ComponentRef Id="PluginDle_2010_64_US"/>
+        <Condition Level="0">NOT INSTALL_2010_64_US</Condition>
+      </Feature>
+      <Feature Id="Max2010_64_FR" Title="3ds Max 2010 (FR) 64-bit" Level="1" AllowAdvertise='no'>
+        <ComponentRef Id="PluginDle_2010_64_FR"/>
+        <Condition Level="0">NOT INSTALL_2010_64_FR</Condition>
+      </Feature>
+      <Feature Id="Max2010_64_DE" Title="3ds Max 2010 (DE) 64-bit" Level="1" AllowAdvertise='no'>
+        <ComponentRef Id="PluginDle_2010_64_DE"/>
+        <Condition Level="0">NOT INSTALL_2010_64_DE</Condition>
+      </Feature>
+      <Feature Id="Max2010_64_JP" Title="3ds Max 2010 (JP) 64-bit" Level="1" AllowAdvertise='no'>
+        <ComponentRef Id="PluginDle_2010_64_JP"/>
+        <Condition Level="0">NOT INSTALL_2010_64_JP</Condition>
+      </Feature>
+      <Feature Id="Max2010_64_CN" Title="3ds Max 2010 (CH) 64-bit" Level="1" AllowAdvertise='no'>
+        <ComponentRef Id="PluginDle_2010_64_CN"/>
+        <Condition Level="0">NOT INSTALL_2010_64_CN</Condition>
+      </Feature>
+
+      <Feature Id="Max2011_64_US" Title="3ds Max 2011 (US) 64-bit" Level="1" AllowAdvertise='no'>
+        <ComponentRef Id="PluginDle_2011_64_US"/>
+        <Condition Level="0">NOT INSTALL_2011_64_US</Condition>
+      </Feature>
+      <Feature Id="Max2011_64_FR" Title="3ds Max 2011 (FR) 64-bit" Level="1" AllowAdvertise='no'>
+        <ComponentRef Id="PluginDle_2011_64_FR"/>
+        <Condition Level="0">NOT INSTALL_2011_64_FR</Condition>
+      </Feature>
+      <Feature Id="Max2011_64_DE" Title="3ds Max 2011 (DE) 64-bit" Level="1" AllowAdvertise='no'>
+        <ComponentRef Id="PluginDle_2011_64_DE"/>
+        <Condition Level="0">NOT INSTALL_2011_64_DE</Condition>
+      </Feature>
+      <Feature Id="Max2011_64_JP" Title="3ds Max 2011 (JP) 64-bit" Level="1" AllowAdvertise='no'>
+        <ComponentRef Id="PluginDle_2011_64_JP"/>
+        <Condition Level="0">NOT INSTALL_2011_64_JP</Condition>
+      </Feature>
+      <Feature Id="Max2011_64_CN" Title="3ds Max 2011 (CH) 64-bit" Level="1" AllowAdvertise='no'>
+        <ComponentRef Id="PluginDle_2011_64_CN"/>
+        <Condition Level="0">NOT INSTALL_2011_64_CN</Condition>
+      </Feature>
+
+      <Feature Id="Requirements" AllowAdvertise="no" InstallDefault="local" Level="1" TypicalDefault='install' Display='hidden'>
+        <ComponentRef Id="DxRedistMar2009"/>
+      </Feature>
+    </Feature>
+
+    <Feature Id='Separate' Title='kW X-port Separate Installation' Description='Install the plug-ins separate from 3ds Max folders.'
+        Display='collapse' Level='2' AllowAdvertise='no'>
+      <ComponentRef Id='SeparateFolderShortcut'/>
+      <ComponentRef Id="PluginDle_2008_64_PLAIN"/>
+      <ComponentRef Id="PluginDle_2009_64_PLAIN"/>
+      <ComponentRef Id="PluginDle_2010_64_PLAIN"/>
+      <ComponentRef Id="PluginDle_2011_64_PLAIN"/>
+      <ComponentRef Id="DxRedistMar2009"/>
+    </Feature>
+
+    <Feature Id="Documentation" Title="Documentation" Description="Shared documentation for kW X-port (English only)."
+        Display="collapse" Level="1" AllowAdvertise='no'>
+      <ComponentRef Id='DocsFolderCreate'/>
+      <ComponentRef Id="Changelist"/>
+      <ComponentRef Id="Manual"/>
+      <ComponentRef Id="kwutils"/>
+      <ComponentRef Id="RemoveShortcuts"/>
+      <ComponentRef Id="DxRedistMar2009"/>
+    </Feature>
+
+    <UIRef Id="WixUI_FeatureTree" />
+    <UIRef Id="WixUI_ErrorProgressText" />
+
+    <CustomAction Id="D3DX" FileKey="DXSETUP.exe" ExeCommand="/silent" Execute="deferred"
+        Impersonate="no" Return="ignore" />
+
+  </Product>
+</Wix>

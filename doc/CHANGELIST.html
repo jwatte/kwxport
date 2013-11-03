@@ -1,0 +1,165 @@
+<html>
+  <head>
+    <title>kW X-port 3ds Max .X File Exporter Change List</title>
+    <link rel='stylesheet' href='styles.css'/>
+  </head>
+  <body>
+    <a name='knownissues'><h3>Known Issues</h3></a>
+    <p>There is a known bug in 3ds Max, where a skinned mesh will not be exported correctly 
+       if the modifier stack has more than two items in it. To export correctly, the stack 
+       needs to contain exactly one Editable Mesh modifier, and one Skin (or Physique) modifier 
+       right on top of that. While it would be possible to work around this bug, it would 
+       take way too much time, so I'm waiting for a fix from Autodesk. In the meanwhile, 
+       make sure to properly collapse the stack before exporting.</p>
+     <p>The support for 3ds Max 2010 and 64-bit causes a memory leak on 3ds Max 2010. This 
+       is not something I can do anything about, but something which is a bug in 3ds Max 2010. 
+       Autodesk fixed this bug in 3ds Max 2011.</p>
+    <p>There is a known problem with Bipeds, where bones may have an additional 90 degree 
+       rotation at the root, which is hidden inside Biped.</p>
+    <h3><a name='1.5.0'>Version 1.5.0, 2010-05-16</a></h3>
+    <ul>
+      <li>Better implementation of KWFunctions scripting interface.</li>
+      <li>Support Max 2011.</li>
+      <li>Work around "1 second animation bug" in XNA Game Studio.</li>
+      <li>Remove confusing "export shader" checkbox -- now it just does the right thing.</li>
+      <li>Remove confusing "static frame" label -- now it uses the timeline.</li>
+    </ul>
+    <h3><a name='1.4.5'>Version 1.4.5, 2010-03-25</a></h3>
+    <ul>
+      <li>Don't crash when some vertices in a Skin/Physique modifier are not bound to any bone.</li>
+      <li>Show a useful diagnostic when some vertices are unbound.</li>
+      <li>Support new flavor of color parameters for shaders; properly export color parameters for all shaders.</li>
+    </ul>
+    <div id='expando' onclick='javascript:showOlder();'
+      style='background: #dddddd; border: solid 1px #000000; cursor: pointer;'>
+    Click here to show older notes
+    </div>
+    <div id='older' style='display:none;'>
+    <h3><a name='1.4.4'>Version 1.4.4, 2009-11-01</a></h3>
+    <ul>
+      <li>Bring back the scripting interface!</li>
+      <li>Fix settings sometimes not loading.</li>
+    </ul>
+    <h3><a name='1.4.3'>Version 1.4.3, 2009-10-04</a></h3>
+    <ul>
+      <li>Support 64-bit versions of 3ds max.</li>
+      <li>Fix corrupt shader path when exporting from Max 2010.</li>
+      <li>Fix missing shortcut to separately installed plug-ins.</li>
+    </ul>
+    <h3><a name='1.4.2'>Version 1.4.2, 2009-10-03</a></h3>
+    <ul>
+      <li>Fix wrong tangent basis exported.</li>
+      <li>Fix installation on localized versions of 3ds Max.</li>
+      <li>Fix Windows Installer version problem.</li>
+      <li>Add option to install plug-ins only (does not require Max to be installed).</li>
+    </ul>
+    <h3><a name='1.4.1'>Version 1.4.1, 2009-07-23</a></h3>
+    <ul>
+      <li>Fix the "bad parameter values in default shaders" bug.</li>
+      <li>Fix an installer package problem seen by some users.</li>
+    </ul>
+    <h3><a name='1.4.0'>Version 1.4.0, 2009-07-19</a></h3>
+    <ul>
+      <li>Export multiple texture maps as shader from standard Max material.</li>
+      <li>Support for 3ds Max 2010.</li>
+      <li>Work-around for the bug where Effects/Shaders sometimes were not recognized by IGame.</li>
+      <li>MaxScript API. Check out the KWFunctions interface, and the kwutils.ms sample script file.</li>
+      <li>Documentation / Manual is now properly installed into Start menu program list.</li>
+      <li>GUI improvements.</li>
+      <li>Bug fixes.</li>
+    </ul>
+    <h3><a name='1.3.4'>Version 1.3.4, 2008-09-20</a></h3>
+    <ul>
+      <li>Fix some crashing bugs with bad materials.</li>
+      <li>Improved log file creation.</li>
+    </ul>
+    <h3><a name='1.3.2'>Version 1.3.2, 2008-08-00</a></h3>
+    <ul>
+      <li>3ds Max 9 is still supported! Sorry, no version 8 support.</li>
+      <li>Improved installer support (single installer for all 32-bit versions).</li>
+      <li>Fix mixing rigid and skinned objects in a single skeleton.</li>
+      <li>Add "copy textures" option on export.</li>
+      <li>Log information is now printed to a window on error.</li>
+    </ul>
+    <h3><a name='1.3.1'>Version 1.3.1, 2008-07-00</a></h3>
+    <ul>
+      <li>Only released as a test version.</li>
+      <li>Allow export of disjointly numbered UV map numbers (e g map 2, 5 and 9).</li>
+      <li>Fix pivot offsets when not at the origin of the scene.</li>
+      <li>Fix vertex color exporting.</li>
+      <li>Fix some incompatibilities of 1.3.0.</li>
+      <li>Change the behavior of "Renderable" checkbox: nodes are exported, but not geometry, if not checked.</li>
+    </ul>
+    <h3><a name='1.3.0'>Version 1.3.0, 2008-03-28</a></h3>
+    <ul>
+      <li>Supports both Y-up and Z-up export.</li>
+      <li>More robust skin export.</li>
+      <li>New "Export Hidden" checkbox.</li>
+      <li>"Not Renderable" objects are now not exported, (even if "Export Hidden" is on).</li>
+      <li>Additionally supports compressed text and uncompressed binary.</li>
+      <li>Re-link with March 2008 DirectX SDK.</li>
+      <li>This is likely the last release for 3ds Max 9, because 3ds Max 2009 and 3ds Max 2008 are both newer.</li>
+    </ul>
+    <h3><a name='1.2.2'>Version 1.2.2, 2008-02-19</a></h3>
+    <ul>
+      <li>Don't crash when exporting shaders with missing textures.</li>
+      <li>Export more than 2 sets of UV coordinates.</li>
+      <li>Prep work for Max 2008 version.</li>
+    </ul>
+    <h3><a name='1.2.1'>Version 1.2.1, 2007-07-16.</a></h3>
+    <ul>
+      <li>Fix introduced bug with animation pose matrices.</li>
+      <li>Work around when bad normals are received by IGame.</li>
+      <li>Add "Export Comments" features to export node user props.</li>
+      <li>Re-link with June 2007 SDK.</li>
+    </ul>
+    <h3><a name='1.2.0'>Release 1.2, 2007-07-08.</a></h3>
+    <ul>
+      <li>Don't crash when trying to export a spline (IGame bug).</li>
+      <li>Don't crash when exporting partially un-textured objects.</li>
+      <li>Re-link with April 2007 SDK.</li>
+    </ul>
+    <h3><a name='1.1.2'>Release 1.1.2, 2006-12-10.</a></h3>
+    <ul>
+      <li>Don't replace the default IGame.dll (instead, use special hacked version 
+      that is called iga22.dll). This will allow old exporters (like Panda or JSR) 
+      to keep working with the old IGame DLL.</li>
+      <li>Fix the bug where export selected exported an empty scene. Believe it or 
+      not, this was yet another bug in the IGame DLL.</li>
+    </ul>
+    <h3><a name='1.1.1-tc'>Release 1.1.1, Twice Cooked, 2006-12-09.</a></h3>
+    <ul>
+      <li>This is the same as 1.1.1, except it is for 3dsmax9, tested with final version 9.</li>
+    </ul>
+    <h3><a name='1.1.1-rl'>Release 1.1.1, Reloaded, 2006-11-11.</a></h3>
+    <ul>
+      <li>This is the same as 1.1.1, except it is for 3dsmax9. This version had compatibility problems.</li>
+    </ul>
+    <h3><a name='1.1.1'>Release 1.1.1, 2006-11-04.</a></h3>
+    <ul>
+      <li>Generally support more compatibility with XNA Game Studio.</li>
+      <li>Fix mesh names to be unique (helps with XNA animation import).</li>
+      <li>Add UV flipping option.</li>
+      <li>Add Y negation option (for XNA bug).</li>
+      <li>Fix some animation bugs.</li>
+      <li>Strip full path from shader parameters if fullPath is not on.</li>
+    </ul>
+    <h3><a name='1.1.0'>Release 1.1, 2006-10-30.</a></h3>
+    <ul>
+      <li>Fix time scale.</li>
+      <li>Add binary format export.</li>
+      <li>Incorporate fix for IGame multi-texture crash.</li>
+      <li>Incorporate fix for IGame Physique crash.</li>
+      <li>Add shader export with parameters.</li>
+    </ul>
+    <h3><a name='1.0.0'>Release 1.0, 2006-07-20.</a></h3>
+    <p>Initial release.</p>
+    </div>
+    <script language='javascript'>
+      function showOlder() {
+        document.getElementById("older").style.display = "block";
+        document.getElementById("expando").style.display = "none";
+      }
+     </script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+body {
+  width: 600px;
+  font-family: "Tacoma", sans-serif;
+  line-height: 140%;
+}
+dt {
+  background: #dddddd;
+}
+p {
+  width: 600px;
+}
+dl {
+  width: 600px;
+}
+h2 {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid blue;
+}

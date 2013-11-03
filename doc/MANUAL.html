@@ -1,0 +1,220 @@
+<html>
+  <head>
+    <title>kW X-port 3ds Max .X file exporter plug-in</title>
+    <link rel='stylesheet' href='styles.css'/>
+  </head>
+  <body>
+    <h1>kW X-port for 3ds Max Documentation</h1>
+    <p>This documentation describes the kW X-port exporter plug-in for Autodesk 3ds Max 
+    modeling tool. As of version 1.5, kW X-port supports 3ds Max versions 9, 2008, 2009, 
+    2010 and 2011 in 32-bit and 64-bit version. Note that the same IGame.dll Max library 
+    that kW X-port uses was too buggy in 3ds Max version 8 or below to reasonably support 
+    those versions, hence version 9 is the lowest supported version.</p>
+    <h2>Features</h2>
+    <p>kW X-port is written to support the needs of those developing 3D games using 3ds Max 
+    and the .X file format. The most common example of .X file format usage comes from the 
+    Microsoft XNA Game Studio tool set, although the Microsoft DirectX SDK also contains 
+    code to read and use .X mesh files. kW X-port supports almost every feature that is 
+    supported in general .X file importers, except for rarely used features such as 
+    progressive meshes.</p>
+    <p>kW X-port has been developed and tested to the point that it is now a very robust 
+    exporter for animated and static geometry, using Skin or Physique modifiers, Biped or 
+    Bones skeletons, or rigid (hierarchical) animated models. Where most other exporters 
+    will fall down in one way or another, especially when it comes to skinning, kW X-port 
+    generally will do the right thing.</p>
+    <p>Features of the exporter include:<ul>
+    <li>The ability to copy textures into the output folder of the export.</li>
+    <li>Cutting the 3ds Max timeline into multiple separate animation clips.</li>
+    <li>Including or excluding specific geometry based on flags.</li>
+    <li>Exporting DirectX Shader Material parameters.</li>
+    <li>Multiple texture coordinate sets (up to 4) in a single .X file.</li>
+    <li>MaxScript support in the KWFunctions interface.</li>
+    <li>And a number of settings and options that can tune the export to suit almost any 
+    export scenario.</li>
+    </ul>
+    <h2>New in This Version</h2>
+     <p>See the document <a href='CHANGELIST.html'>CHANGELIST.html</a>.</p>
+    <h2>Installing</h2>
+     <p>If you're reading this on the web, you need to download the installer: <a href='http://www.kwxport.org/download'>www.kwxport.org</a>.</p>
+     <p>Double-click the downloaded installer msi file. It will look for installed, supported 
+        versions of 3ds Max, and offer you checkboxes for installing them. If you see no 
+        exporter versions offered, then something went wrong -- perhaps you're using a 
+        localized version which is not currently supported? If that is the case, please 
+        contact me on the <a href='http://www.kwxport.org/forum'>kW X-port forums</a>. 
+        In this case, you should be given the option to install the plug-in in "stand-alone" 
+        mode in the Program Files folder, and you will have to move it to the proper "plugins" 
+        folder in your copy of 3ds Max yourself.<p>
+     <p>Installing kW X-port will also install the proper Visual Studio 2008 C Runtime 
+        libraries, and the proper DirectX release runtime.</p>
+    <h2>Configuring</h2>
+     <p>To use kW X-port, prepare your scene (hide or mark non-renderable objects that you 
+      do not want to export, etc), and then select <strong>Export...</strong> from the file menu.
+      Click the pop-up menu for file format at the bottom, and scroll to the end, where you will 
+      find kW X-port for .X files. Select that file format, select the output file name, and 
+      press OK. The configuration dialog will now open, which lets you set various parameters 
+      for the export process. Choices you make here depend a lot on what your particular game 
+      requires, and there are no one "right" set of choices for any situation.</p>
+      <p>For using a mesh with XNA Game Studio, you generally want to turn on "Right-handed mesh" 
+      and "flip winding." When doing this, it means that the mesh will be properly exported for 
+      the right-handed system in the default XNA Game Studio set-up, and you do not need to use 
+      any of the options in the X file importer tool in the Content project in XNA Game Studio. 
+      You likely also want to turn on "Make Y Up" for the same reason.</p>
+    <p><img src='kwxport-1.5.0.png'/></p>
+    <h2>Options</h2>
+     <h3>Geometry Options</h3>
+      <dl>
+      <dt>Export Normals</dt>
+      <dd>Include per-vertex normals in the exported data. This may duplicate vertices to support hardware.</dd>
+      <dt>Export Tangents</dt>
+      <dd>In addition to normals, also export tangent and bitangent channels.</dd>
+      <dt>Colors as Diffuse</dt>
+      <dd>Export per-vertex colors in the diffuse color channel of the vertex buffer.</dd>
+      <dt>Num UV Channels</dt>
+      <dd>The maximum number of texture coordinate channels to include per vertex. Cannot be higher than 4.</dd>
+      <dt>Flip V Channel</dt>
+      <dd>Has the effect of flipping the texture mapping upside-down.</dd>
+      <dt>Make Y Up</dt>
+      <dd>Export files that draw and animate with Y up (DirectX default) rather than Z up (Max default).</dd>
+      <dt>Export Right-handed Mesh</dt>
+      <dd>Export a mesh that is not mirrored when used in a right-handed coordinate system, such as XNA Game Studio.</dd>
+      <dt>Flip Winding</dt>
+      <dd>Adjust the triangle winding to be counter-clockwise in right-handed space. This is default in Direct3D.</dd>
+      <dt>Scale Numerator</dt>
+      <dd>Scale up Max System Units by this much before exporting positions to vertex buffer.</dd>
+      <dt>Scale Denominator</dt>
+      <dd>Scale down Max System Units by this much before exporting positions to vertex buffer.</dd>
+      <dt>Export Skinning</dt>
+      <dd>Include Physique and/or Skin modifier skinning data in vertex buffer (blend weights and indices).</dd>
+      </dl>
+      <p>Note: If System Units is inches, and you want meters out, set Scale Numerator to 2.54 and set 
+       Scale Denominator to 100. (1 / 40 is very close to the same, but not exactly). If the System Unit 
+       is inches, and you want feet out, set the numerator to 1, and the denominator to 12. If the System 
+       unit is centimeters, and you want meters out, set numerator to 1, and denominator to 100.</p>
+     <h3>Materials Options</h3>
+      <dl>
+      <dt>Export Materials</dt>
+      <dd>Include material information with the exported geometry. You generally want this turned on, unless 
+       you export only invisible "collision" geometry, for example.</dd>
+      <dt>Full Texture Path</dt>
+      <dd>Include the full path to the texture file in the material description. This means the texture will 
+       be easily found by any program on your machine, but the file may not work well if transfered to another 
+       machine.</dd>
+      <dt>Rename to DDS</dt>
+      <dd>When writing texture names, change the extension of the texture file name to "dds" in the material. 
+       This does not actually convert the texture data; you'll have to do that yourself.</dd>
+      <dt>Prefix</dt>
+      <dd>If not using full texture paths, then prepend this string to the name of the texture file names 
+       written into the file. For example, if this is "textures/" and the texture is named "green.jpg" and 
+       "rename to DDS" is turned on, the texture name written to file will be "textures/green.dds".</dd>
+      <dt>Copy Textures</dt>
+      <dd>If checked, will copy the textures used by the mesh materials to the same folder as the mesh 
+       is exported to. Generally, you do not use Full Texture Path in this case, and do not use a Prefix.</dd>
+      <dt>Ignore Untextured</dt>
+      <dd>If some geometry is not textured, then do not include it in the output. This can be a helpful way 
+       to avoid exporting helper objects used for animation, etc.</dd>
+      </dl>
+      <p>Any material using the DirectX Material in the Max viewport will be exported as a 
+       DirectX Effect reference, with the same parameters as configured in the Max Material library.</p>
+     <h3>Misc Options</h3>
+      <dl>
+      <dt>Export Comments</dt>
+      <dd>Include some extra information about the file and the geometry in the file in the .X file. This 
+       information is mostly usable for programmers reading the files.</dd>
+      <dt>Export Hidden</dt>
+      <dd>Even if a geometry/node has been hidden in Max, include it in the export. Otherwise, hidden 
+       geometry is not included. Also, geometry that has the "Renderable" checkbox set to false in the 
+       node properties in max will not be exported, unless this flag is set.</dd>
+      <dt>Export Compressed</dt>
+      <dd>Compress the output file using the DirectX library file compression. Generally combined with 
+       binary file format to make the smallest possible files.</dd>
+      <dt>Export Binary</dt>
+      <dd>Write the output as binary .X format, rather than text .X format. Generally combined with the 
+       compress option to generate the smallest possible files.</dd>
+      </dl>
+     <h3>Animation Options</h3>
+      <dl>
+      <dt>Export Animation</dt>
+      <dd>Include animation on the Max timeline in the file export data. You need to define animation 
+       clips for the animation to actually be included.</dd>
+      <dt>First Frame</dt>
+      <dd>The first frame (number) of a clip within the timeline that you are defining.</dd>
+      <dt>Num. Frames</dt>
+      <dd>The number of frames (length) of a clip within the timeline that you are defining.</dd>
+      <dt>Stretch Time</dt>
+      <dd>Scale the duration of an animation clip that you are defining. 2.0 means twice as long.</dd>
+      <dt>Animation Name</dt>
+      <dd>The name to give the animation clip you are defining.</dd>
+      <dt>Add</dt>
+      <dd>Take the first frame, num frames, stretch and name parameters from above, and append them as 
+       a clip to the list of clips to export.</dd>
+      <dt>Update</dt>
+      <dd>Update the selected clip in the list of clips with the information in the above fields.</dd>
+      <dt>Remove</dt>
+      <dd>Remove the selected clip from the list of clips to export.</dd>
+      <dt>List</dt>
+      <dd>This list shows the named animation clips that you have defined, as sub-ranges of the timeline. 
+       This allows you to mark one part of the timeline as Idle, one as Walk, etc. Click on an entry to 
+       edit it (change the field values, and press Update), or delete it (press Remove).</dd>
+      </dl>
+    <h2>MaxScript API</h2>
+     <p>The settings and file operations of kW X-port are fully scriptable through MaxScript! 
+      When the kW X-port plug-in is loaded, the "kwfunctions" interface will contain functions to 
+      get and set setting names and values, and to add, update and remove animation clips. You can 
+      see the full list of functions by executing<br/>
+        <tt>showinterface("kwfunctions")</tt><br/>
+      in the MaxScript Listener window. The installer also puts a MaxScript file called kwutils.ms 
+      in the same folder as this documentation, which implements a simple utility that lets you 
+      save the configuration of the current exporter settings to a file, load configuration files 
+      into the current scene (preserving the animation clips in the current scene, or overwriting 
+      the animation clip definitions with the data in the file), and export the scene.
+     </p>
+    <h2>Recommendations</h2>
+     <p>When using kW X-port, various features become more important than others. Here 
+     are some suggestions that have come from users of kW X-port, that may simplify your 
+     life.</p>
+     <h3>Using a Script to Export</h3>
+     <p>The best workflow for exporting is generally to define a number of Max scripts that 
+        export a scene in a given, consistent way. For example, you may have one script for 
+        exporting static geometry; another script for exporting skinned characters; and yet 
+        another script for exporting animations. After writing those scripts, you can tie 
+        them to widgets on the Max toolbar, so that exporting correctly is as simple as 
+        clicking an icon. The new ability to load/save exporter settings to text files in 
+        MaxScript can greatly help with this, as it allows such a MaxScript to simply load 
+        the appropriate settings, and then calling the export function.</p>
+     <h3>Animation Clips are Stored in User Data</h3>
+     <p>The animation clip information is stored in the user properties of the document, as 
+        a string called "allAnimations." This means that you could edit the animations by 
+        editing this string, as well as editing any other property stored in the document 
+        user properties. However, that may cause the MaxScript interface to lose sync with 
+        the settings (as it keeps a cached copy of the settings), so the best way to change 
+        settings, if you don't want to use the settings dialog, is to use the MaxScript API.</p>
+    <h2>Frequently Asked Questions</h2>
+    <dl>
+    <dt>Can I export vertex morph animations using kW X-port?</dt>
+    <dd>Generally, no. The .X file format does not support morph animation.</dd>
+    <dt>Can you support 3ds Max version 8/7/5/3 ?<dt>
+    <dd>No. Not only do I not have access to those versions of 3ds Max; they are also very 
+    old, and most importantly, the IGame.dll library for versions older than 9 is too buggy 
+    to be useful for kW X-port.</dd>
+    <dt>When I export a skinned mesh, it comes out looking like a box, or otherwise all wrong.</dt>
+    <dd>There is still a bug in the IGame.dll library part of 3ds Max, which makes it so that 
+    you have to collapse the modifier stack before export. The only two modifiers on the stack 
+    should be Editable Mesh at the bottom, and Physique or Skin on top of that. If there are other 
+    modifiers, the exported data will be wrong. There is not much I can do about this, other than 
+    keep bugging Autodesk to fix this (the bug report is on the fourth year and counting, though).</dd>
+    <dt>Does kW X-port support lights?</dt>
+    <dd>No, the .X file format does not support lighs, so kW X-port cannot export the 
+    lights from your scene. You can export a dummy with a specific name, and find that in your 
+    game, to serve the purpose of a light.</dd>
+    <dt>Does kW X-port support cameras?</dt>
+    <dd>No, the .X file format does not support cameras, so kW X-port cannot export the cameras 
+    from your scene. You can export a dummy with a specific name, and find that in your game, to 
+    serve the same purpose.</dd>
+    </dl>
+    <h2>For More Help</h2>
+    <p>There is a help forum, download links, and even source code (Open Source! Yay!) available 
+    at the web site <a href='http://www.kwxport.org/'>www.kwxport.org</a>. Feel free to post any 
+    questions you might have in the forums, and welcome to the kW X-port community!
+    </p>
+  </body>
+</html>
